@@ -67,7 +67,7 @@ public class Exercise01 {
         int meio = 0;
         int base = 0;
         int soma = 0;
-        int resposta = 0;
+        int resposta = Integer.MIN_VALUE; //Setamos o valor da resposta final para o menor int possível
         for (int i=0; i < 4; i++){
             for(int j=0; j < 4; j++){
                 //Estrutura da ampulheta 2D
@@ -77,6 +77,7 @@ public class Exercise01 {
 
                 soma = topo + meio + base;
 
+                System.out.println("Soma: " + soma);
                 //Atualiza a resposta para os casos em que a soma é maior do que o valor anterior
                 if (soma > resposta){
                     resposta = soma;
@@ -93,12 +94,13 @@ public class Exercise01 {
         List<List<Integer>> matrix = new ArrayList<>();
 
         // Adicionando as linhas à matriz
-        matrix.add(List.of(-9, -9, -9, 1, 1, 1));
-        matrix.add(List.of(0, -9, 0, 4, 3, 2));
-        matrix.add(List.of(-9, -9, -9, 1, 2, 3));
-        matrix.add(List.of(0, 0, 8, 6, 6, 0));
-        matrix.add(List.of(0, 0, 0, -2, 0, 0));
-        matrix.add(List.of(0, 0, 1, 2, 4, 0));
+        matrix.add(List.of(-1, -1, 0, -9, -2, -2));
+        matrix.add(List.of(-2, -1, -6, -8, -2, -5));
+        matrix.add(List.of(-1, -1, -1, -2, -3, -4));
+        matrix.add(List.of(-1, -9, -2, -4, -4, -5));
+        matrix.add(List.of(-7, -3, -3, -2, -9, -9));
+        matrix.add(List.of(-1, -3, -1, -2, -4, -5));
+
 
         // Exibindo a matriz
         for (List<Integer> row : matrix) {
